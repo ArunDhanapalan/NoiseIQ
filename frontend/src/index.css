@@ -1,0 +1,98 @@
+@tailwindcss base;
+@tailwindcss components;
+@tailwindcss utilities;
+
+/* Custom Scrollbar for sleek municipal theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Custom Leaflet Map Pin Styles */
+.leaflet-container {
+  font-family: 'Inter', sans-serif !important;
+  border-radius: 0.75rem;
+  z-index: 10;
+}
+
+.noise-pin-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.noise-pin {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 11px;
+  color: #ffffff;
+  box-shadow: none;
+  transition: transform 0.2s ease;
+}
+
+.noise-pin:hover {
+  transform: scale(1.25);
+  z-index: 999;
+  box-shadow: none;
+}
+
+.noise-pin.quiet {
+  background-color: #10B981;
+}
+
+.noise-pin.moderate {
+  background-color: #F59E0B;
+}
+
+.noise-pin.violation {
+  background-color: #EF4444;
+}
+
+/* City Max dB Summary Markers for Zoom Out / National View */
+.city-max-pin-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-max-pin {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 11px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  white-space: nowrap;
+}
+
+.city-max-pin.quiet { background-color: #10B981; }
+.city-max-pin.moderate { background-color: #F59E0B; }
+.city-max-pin.violation { background-color: #EF4444; }
+
+.city-pin-name { font-family: sans-serif; font-weight: 800; }
+.city-pin-db { font-family: monospace; font-weight: 900; background: rgba(0,0,0,0.35); padding: 1px 6px; border-radius: 10px; }
+
+/* Audio Visualizer Level Bar Animation */
+.volume-meter-bar {
+  transition: width 0.08s ease-out;
+}
